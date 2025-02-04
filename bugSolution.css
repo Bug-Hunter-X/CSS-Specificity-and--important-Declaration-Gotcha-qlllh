@@ -1,0 +1,17 @@
+The solution is to avoid using `!important` whenever possible.  This often involves refactoring your CSS to resolve specificity issues using more specific selectors or adjusting the order of your CSS declarations:
+
+```css
+.parent {
+  color: blue;
+}
+
+.parent .child {
+  color: green; 
+}
+
+.parent .child .grandchild {
+  color: yellow;
+}
+```
+
+In this revised version, the specificity of the selectors ensures the correct color inheritance and avoids the need for `!important`. If `!important` absolutely is required, use it judiciously in a well-documented and organized manner.
